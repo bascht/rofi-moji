@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+asciimoji = {
+  bear: "ʕ •ᴥ•ʔ",
+  bearflip: "ʕノ•ᴥ•ʔノ ︵ ┻━┻",
+  flip: "(╯°□°)╯︵ ┻━┻",
+  shrug: "¯\_(ツ)_/¯",
+  yuno: "ლ(ಠ益ಠლ)",
+  shrugdis: "¯\_ಠ_ಠ_/¯",
+  dealwithit: "(•_•) ( •_•)>⌐■-■ (⌐■_■)"
+}
+
+if command = ARGV.first
+  key = command.split(":").first.to_sym
+  type = fork do
+    exec "xdotool sleep 3 type '#{asciimoji[key]}'"
+  end
+  Process.detach(type)
+  exit 0
+end
+
+length = asciimoji.keys.max_by{|l| l.to_s.length}.length + 2
+
+asciimoji.each_pair do |e,s|
+  printf "%-#{length}s %s\n", e, s
+end
