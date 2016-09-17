@@ -1,7 +1,7 @@
 # ROFI-MOJI
 
 Use your [rofi](https://davedavenport.github.io/rofi/) launcher to
-select from different ASCII emoji and let `xdotool` type them for you.
+select from different ASCII<sup>1</sup> emoji and let `xdotool` type them for you.
 
 
 ### Screenshot
@@ -16,3 +16,5 @@ call:
 ```
 rofi -modi 'window,ssh,run,emoji:rofi-moji'
 ```
+---
+[1] `ASCII`: **A**rti**s**an **C**ode (for) **I**rony **I**nterchange
